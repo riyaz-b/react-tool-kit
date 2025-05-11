@@ -1,0 +1,67 @@
+.employee-list {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.employee-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.employee-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card p {
+  margin: 5px 0;
+}
+
+.employee-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.employee-card button:hover {
+  background-color: #0056b3;
+}
+
+.edit-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.edit-form input {
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.edit-form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.edit-form button:hover {
+  background-color: #218838;
+}

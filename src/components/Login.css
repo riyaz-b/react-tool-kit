@@ -1,0 +1,65 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Login Box */
+.login-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+/* Login Heading */
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Input Fields */
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message */
+.login-error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-size: 14px;
+}

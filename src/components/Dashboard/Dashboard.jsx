@@ -32,6 +32,9 @@ const Dashboard = () => {
         <NavLink className="nav-link" to="/dashboard/custom-hook">
           Custom Hook
         </NavLink>
+        <NavLink className="nav-link" to="/dashboard/pagination-menu">
+          Pagination Menu
+        </NavLink>
       </nav>
       <main>
         <Outlet />

@@ -1,6 +1,10 @@
+/* Styling for the Redux Employee List */
 .employee-list {
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .employee-row {
@@ -10,13 +14,12 @@
 }
 
 .employee-card {
+  background-color: #ffffff;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   width: 200px;
-  text-align: center;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .employee-card p {
@@ -24,44 +27,52 @@
 }
 
 .employee-card button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  margin-right: 5px;
   padding: 5px 10px;
-  cursor: pointer;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .employee-card button:hover {
-  background-color: #0056b3;
+  opacity: 0.8;
+}
+
+.remove-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a;
 }
 
 .edit-form {
   margin-top: 20px;
-  padding: 20px;
+  padding: 15px;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .edit-form input {
   display: block;
-  margin: 10px 0;
-  padding: 5px;
+  margin-bottom: 10px;
+  padding: 8px;
   width: 100%;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .edit-form button {
-  background-color: #28a745;
-  color: white;
+  margin-right: 5px;
+  padding: 8px 12px;
   border: none;
-  padding: 5px 10px;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .edit-form button:hover {
-  background-color: #218838;
+  opacity: 0.8;
 }

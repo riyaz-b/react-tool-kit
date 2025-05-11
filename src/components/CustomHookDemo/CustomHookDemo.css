@@ -1,0 +1,30 @@
+.custom-hook-demo {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-hook-demo h2 {
+  margin-bottom: 20px;
+}
+
+.custom-hook-demo p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.custom-hook-demo button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-hook-demo button:hover {
+  background-color: #0056b3;
+}

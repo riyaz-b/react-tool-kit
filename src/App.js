@@ -1,35 +1,36 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { store } from './redux/store';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import AxiosMenu from './components/AxiosMenu';
-import EmployeeList from './components/EmployeeList';
-import ReduxMenu from './components/ReduxMenu';
-import ReactQueryMenu from './components/ReactQueryMenu';
-
-const queryClient = new QueryClient();
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import AuthProvider from './context/AuthContext';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import Dashboard from './components/Dashboard/Dashboard';
+import AxiosMenu from './components/AxiosMenu/AxiosMenu';
+import EmployeeList from './components/EmployeeList/EmployeeList';
+import ReduxMenu from './components/ReduxMenu/ReduxMenu';
+import ReactQueryMenu from './components/ReactQueryMenu/ReactQueryMenu';
+import UseEffectDemo from './components/UseEffectDemo/UseEffectDemo';
+import CustomHookDemo from './components/CustomHookDemo/CustomHookDemo';
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />}>
-              {/* Nested routes under /dashboard */}
-              <Route path="axios-menu" element={<AxiosMenu />} />
-              <Route path="employee-list" element={<EmployeeList />} />
-              <Route path="redux-menu" element={<ReduxMenu />} />
-              <Route path="react-query-menu" element={<ReactQueryMenu />} />
-            </Route>
-          </Routes>
-        </Router>
-      </QueryClientProvider>
-    </Provider>
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard/*" element={<Dashboard />}>
+            <Route path="axios-menu" element={<AxiosMenu />} />
+            <Route path="employee-list" element={<EmployeeList />} />
+            <Route path="redux-menu" element={<ReduxMenu />} />
+            <Route path="react-query-menu" element={<ReactQueryMenu />} />
+            <Route path="use-effect" element={<UseEffectDemo />} />
+            <Route path="custom-hook" element={<CustomHookDemo />} />
+          </Route>
+          <Route path="*" element={<Login />} /> {/* Redirect unknown routes to login */}
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
 };
 

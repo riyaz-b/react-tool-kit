@@ -5,25 +5,41 @@ import {
   updateEmployee,
   clearSelectedEmployee,
   removeEmployee,
-} from '../redux/employeeSlice';
-import './EmployeeList.css'; // Reuse the same CSS for styling
+} from '../../redux/employeeSlice'; // Corrected path
+import './ReduxMenu.css'; // Corrected path
 
+/**
+ * ReduxMenu Component
+ * Displays a list of employees and allows editing or removing them.
+ */
 const ReduxMenu = () => {
+  // Accessing employees and selectedEmployee from the Redux store
   const employees = useSelector((state) => state.employee.employees);
   const selectedEmployee = useSelector((state) => state.employee.selectedEmployee);
   const dispatch = useDispatch();
 
+  /**
+   * Handles the "Edit" button click
+   * @param {number} id - The ID of the employee to edit
+   */
   const handleEdit = (id) => {
-    dispatch(selectEmployee(id));
+    dispatch(selectEmployee(id)); // Dispatch action to select an employee
   };
 
+  /**
+   * Handles the "Save" button click in the edit form
+   */
   const handleSave = () => {
-    dispatch(updateEmployee(selectedEmployee));
-    dispatch(clearSelectedEmployee());
+    dispatch(updateEmployee(selectedEmployee)); // Dispatch action to update the employee
+    dispatch(clearSelectedEmployee()); // Clear the selected employee
   };
 
+  /**
+   * Handles the "Remove" button click
+   * @param {number} id - The ID of the employee to remove
+   */
   const handleRemove = (id) => {
-    dispatch(removeEmployee(id)); // Dispatch the removeEmployee action
+    dispatch(removeEmployee(id)); // Dispatch action to remove the employee
   };
 
   return (

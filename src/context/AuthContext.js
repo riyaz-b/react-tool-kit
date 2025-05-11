@@ -1,28 +1,40 @@
 import React, { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
-const defaultCredentials = {
-  username: 'riyaz',
-  password: 'riyaz'
-};
-
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const login = (username, password) => {
-    if (username === defaultCredentials.username && password === defaultCredentials.password) {
+    if (username === 'riyaz' && password === 'riyaz') {
+      setIsAuthenticated(true);
       setUser({ username });
+      navigate('/dashboard');
       return true;
     }
     return false;
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    setIsAuthenticated(false);
+    setUser(null);
+    navigate('/login');
+  };
+
+  const bypassLogin = () => {
+    setIsAuthenticated(true);
+    setUser({ username: 'bypass' });
+    navigate('/dashboard');
+  };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, bypassLogin }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+export default AuthProvider;

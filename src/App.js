@@ -11,6 +11,7 @@ import UseEffectDemo from './components/UseEffectDemo/UseEffectDemo';
 import CustomHookDemo from './components/CustomHookDemo/CustomHookDemo';
 import ProtectedRoute from './components/ProtectedRoute'; // Correct path if it's directly in components
 import PaginationMenu from './components/PaginationMenu/PaginationMenu';
+import FileUpload from './components/FileUpload/FileUpload';
 
 const App = () => {
   return (
@@ -79,6 +80,14 @@ const App = () => {
               element={
                 <ProtectedRoute allowedRoles={['admin']}>
                   <CustomHookDemo />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="file-upload"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <FileUpload />
                 </ProtectedRoute>
               }
             />

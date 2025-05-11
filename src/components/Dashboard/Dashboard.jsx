@@ -35,6 +35,9 @@ const Dashboard = () => {
         <NavLink className="nav-link" to="/dashboard/pagination-menu">
           Pagination Menu
         </NavLink>
+        <NavLink className="nav-link" to="/dashboard/file-upload">
+          File Upload
+        </NavLink>
       </nav>
       <main>
         <Outlet />
